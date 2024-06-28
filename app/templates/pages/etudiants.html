@@ -1,0 +1,80 @@
+{% extends 'layout/index.html' %}
+{% block content %}
+<div class="page-wrapper">
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-7 align-self-center">
+                <h2 class="page-title text-truncate text-dark font-weight-medium mb-1">Liste des étudiants</h2>
+                <div class="d-flex align-items-center">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb m-0 p-0">
+                            <li class="breadcrumb-item">Accueil</li>
+                            <li class="breadcrumb-item text-muted active" aria-current="page">Étudiants</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-5 align-self-center">
+                <div class="customize-input float-end">
+                    <a href="{% url 'create_etudiant' %}" class="btn btn-primary">Ajouter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="zero_config" class="table border table-striped table-bordered text-nowrap">
+                                <thead>
+                                    <th>Nom</th>
+                                    <th>Date de naissance</th>
+                                    
+                                    <th>Situation familiale</th>
+                                    <th>Entreprise</th>
+                                    <th>Date de début</th>
+                                    <th>Service</th>
+                                    <th>Poste de travail</th>
+                                    <th>Action</th>
+                                    <th>Origine</th>
+                                    <th>Adresse</th>
+                                </thead>
+                                <tbody>
+                                    {% for etudiant in etudiants %}
+                                    <tr>
+                                        <td>{{ etudiant.nom_etud }} {{ etudiant.prenom_etud }}</td>
+                                        <td>{{ etudiant.date_naissance }}</td>
+                                        
+                                        <th>{{ etudiant.suite }} </th> 
+                                        <th>{{ etudiant.c_postal }}</th>
+                                         <th>{{ etudiant.ville }}</td>
+                                        <td>{{ etudiant.sexe }}</td>
+                                        <td>{{ etudiant.tel_etud }}</td>
+                                        <td>
+                                            <a href="{% url 'view_etudiant' etudiant.pk %}" class="btn btn-sm btn-info">
+                                                <i data-feather="eye" class="feather-icon"></i>
+                                            </a>
+                                            <a href="{% url 'update_etudiant' etudiant.pk %}" class="btn btn-sm btn-success">
+                                                <i data-feather="edit" class="feather-icon"></i>
+                                            </a>
+                                            <a href="{% url 'delete_etudiant' etudiant.pk %}" class="btn btn-sm btn-danger"
+                                                onclick="return confirm('Confirmez-vous la suppression ?')">
+                                                <i data-feather="trash" class="feather-icon"></i>
+                                            </a>
+                                        </td>
+                                        <td>{{ etudiant.origine }}</td>
+                                        <td>{{ etudiant.adresse_etud }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

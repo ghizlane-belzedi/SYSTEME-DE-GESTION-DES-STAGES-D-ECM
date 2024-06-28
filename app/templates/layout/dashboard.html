@@ -1,0 +1,89 @@
+{% extends 'layout/index.html' %}
+{% block content %}
+import json
+		<!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-7 align-self-center">
+                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Welcome {{ request.user | upper}}!</h3>
+                        <div class="d-flex align-items-center">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb m-0 p-0">
+                                    <li>Dashboard 
+									</li>
+									<li> <i data-feather="chevron-right"
+                                        class="svg-icon"></i></span></li>
+									<li>
+										<a class="active" href="#"> Home</a>
+									</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- *************************************************************** -->
+                <!-- Start First Cards -->
+                <!-- *************************************************************** -->
+                <div class="row">
+                <!-- *************************************************************** -->
+                <!-- Start First Cards -->
+                <!-- *************************************************************** -->
+                <div class="row">
+                    <!-- Column --> 
+                    <div class="col-md-6 col-lg-3 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="p-2 bg-primary text-center">
+                                <h1 class="font-light text-white">{{etudiant_count}}</h1>
+                                <h6 class="text-white">Etudiants</h6>
+                            </div>
+                        </div>
+						</div>
+						<div class="col-md-6 col-lg-3 col-xlg-3">
+						<div class="card card-hover">
+                            <div class="p-2 bg-primary text-center">
+                                <h1 class="font-light text-white">{{prof_count}}</h1>
+                                <h6 class="text-white">Professeurs</h6>
+                            </div>
+                        </div>
+					</div>
+					<div class="col-md-6 col-lg-3 col-xlg-3">
+
+						<div class="card card-hover">
+                            <div class="p-2 bg-primary text-center">
+                                <h1 class="font-light text-white">{{entreprise_count}}</h1>
+                                <h6 class="text-white">Entreprises</h6>
+                            </div>
+                        </div>
+						</div>
+						<div class="col-md-6 col-lg-3 col-xlg-3">
+
+						<div class="card card-hover">
+                            <div class="p-2 bg-primary text-center">
+                                <h1 class="font-light text-white">{{stage_count}}</h1>
+                                <h6 class="text-white">Stages</h6>
+                            </div>
+                        </div>
+						</div>
+                    </div>
+					</div>
+					</div>
+				
+			</div>
+		</main>
+		<!-- MAIN -->
+
+{%endblock%}

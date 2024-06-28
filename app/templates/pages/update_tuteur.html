@@ -1,0 +1,37 @@
+{% extends 'layout/index.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modifier Tuteur</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Modifier Tuteur : {{ tuteur.nom_t }} {{ tuteur.prenom_t }}</h2>
+            <h3>{{ msg }}</h3>
+            <form method="POST" enctype="multipart/form-data" action="{% url 'update_tuteur' tuteur.pk %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary col-12">Modifier</button>
+            </form>
+        </div>
+    </div>
+<style>
+    /* styles.css */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  width: 80%; /* Ajustez cette valeur selon vos besoins */
+}
+</style>
+</body>
+</html>
+
+{% endblock %}

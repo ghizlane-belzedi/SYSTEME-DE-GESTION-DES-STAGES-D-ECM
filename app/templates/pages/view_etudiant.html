@@ -1,0 +1,67 @@
+{% extends 'layout/index.html' %}
+{% block content %}
+<div class="page-wrapper">
+    <div class="card mt-3 ml-4">
+        <div class="card-header">
+            <h1>Informations de l'Étudiant</h1>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <tr>
+                    <th>ID :</th>
+                    <td>{{ etudiant.id_Etud }}</td>
+                </tr>
+                <tr>
+                    <th>Nom :</th>
+                    <td>{{ etudiant.nom_etud }}</td>
+                </tr>
+                <tr>
+                    <th>Prénom :</th>
+                    <td>{{ etudiant.prenom_etud }}</td>
+                </tr>
+                <tr>
+                    <th>Qualité :</th>
+                    <td>{{ etudiant.get_qualite_etud_display }}</td>
+                </tr>
+                <tr>
+                    <th>Date de naissance :</th>
+                    <td>{{ etudiant.date_naissance }}</td>
+                </tr>
+                <tr>
+                    <th>Adresse :</th>
+                    <td>{{ etudiant.adresse_etud }}</td>
+                </tr>
+                <tr>
+                    <th>Code postal :</th>
+                    <td>{{ etudiant.c_postal }}</td>
+                </tr>
+                <tr>
+                    <th>Ville :</th>
+                    <td>{{ etudiant.ville }}</td>
+                </tr>
+                <tr>
+                    <th>Sexe :</th>
+                    <td>{{ etudiant.get_sexe_display }}</td>
+                </tr>
+                <tr>
+                    <th>Téléphone :</th>
+                    <td>{{ etudiant.tel_etud }}</td>
+                </tr>
+                <tr>
+                    <th>Promo :</th>
+                    <td>{{ etudiant.promo }}</td>
+                </tr>
+                <tr>
+                    <th>Numéro dans la promotion :</th>
+                    <td>{{ etudiant.n_et_promo }}</td>
+                </tr>
+                <tr>
+                    <th>Mention :</th>
+                    <td>{{ etudiant.mention }}</td>
+                </tr>
+            </table>
+            <a href="{% url 'etudiants' %}"><i class="fa-solid fa-arrow-right-from-bracket"></i> Retour</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

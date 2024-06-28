@@ -1,0 +1,53 @@
+{% extends 'layout/index.html' %}
+{% block content %}
+
+<div class="page-wrapper">
+
+<div class="card mt-3 ml-4">
+    <div class="card-header">
+        <h1>Informations de l'Entreprise</h1>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <tr>
+                <th>Raison Sociale :</th>
+                <td>{{ entreprise.raison_sociale }}</td>
+            </tr>
+            <tr>
+                <th>Forme Juridique :</th>
+                <td>{{ entreprise.forme_juridique }}</td>
+            </tr>
+            <tr>
+                <th>Adresse :</th>
+                <td>{{ entreprise.adresse_ent }}</td>
+            </tr>
+            <tr>
+                <th>Téléphone :</th>
+                <td>{{ entreprise.tel_ent }}</td>
+            </tr>
+            <tr>
+                <th>Code Postal :</th>
+                <td>{{ entreprise.c_postal }}</td>
+            </tr>
+            <tr>
+                <th>Ville :</th>
+                <td>{{ entreprise.ville }}</td>
+            </tr>
+            <tr>
+                <th>Fax :</th>
+                <td>{{ entreprise.fax }}</td>
+            </tr>
+            <tr>
+                <th>Contact Nom :</th>
+                <td>{{ entreprise.contact_nom }}</td>
+            </tr>
+            <tr>
+                <th>Téléphone Contact :</th>
+                <td>{{ entreprise.tel_contact }}</td>
+            </tr>
+        </table>
+        <a href="{% url 'entreprises' %}"><i class="fa-solid fa-arrow-right-from-bracket">Retour</i></a>
+    </div>
+</div>
+</div>
+{% endblock %}

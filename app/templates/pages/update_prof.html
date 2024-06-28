@@ -1,0 +1,40 @@
+{% extends 'layout/index.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modifier Professeur</title>
+
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Modifier Professeur : {{ prof.nom_prof }} {{ prof.prenom_prof }}</h2>
+            <h3>{{ msg }}</h3>
+            <form method="POST" enctype="multipart/form-data" action="{% url 'update_prof' prof.pk %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary col-12">Modifier</button>
+            </form>
+        </div>
+    </div>
+<style>
+    /* styles.css */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.form-container {
+  width: 80%; /* Ajustez cette valeur selon vos besoins */
+}
+
+</style>
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'ECM.png'%}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Inclure le kit Font Awesome pour utiliser les icônes -->
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Lier votre fichier CSS personnalisé -->
+    <link rel="stylesheet" href="{% static 'dist/css/styles.css' %}">
+    <title>Sign in & Sign up Form</title>
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="forms-container">
+
+        <div class="signin-signup">
+          <!-- Formulaire de connexion -->
+          <form action="#" class="sign-in-form" method="POST">
+            {% csrf_token %}
+            <h3>{{msg}}</h3>
+            
+            <img src="{% static 'ECM.png' %}" class="image" alt="" />
+            
+            <!-- Champ de saisie de l'utilisateur (texte) -->
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" name="username"  placeholder="Utilisateur" />
+            </div>
+            <!-- Champ de saisie du mot de passe (mot de passe) -->
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" name="password"  placeholder="Mot de passe" />
+            </div>
+            <!-- Bouton de soumission du formulaire -->
+            <input type="submit" value="Login" class="btn solid" />
+
+          </form>
+
+        </div>
+        <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h1>Gestion des Stages Étudiants</h1><br><br>
+
+            <p>Bienvenue sur l'application de gestion des stages étudiants. Veuillez vous connecter pour accéder à votre compte.</p>
+          </div>
+          <img src="{% static '4949455_19732-PhotoRoom.png-PhotoRoom.png' %}" class="image" alt="" />
+        </div>
+        
+      </div>
+    </div>
+
+    <script  src="{% static 'dist/js/script.js' %}"></script>
+    </div>
+  </body>
+</html>

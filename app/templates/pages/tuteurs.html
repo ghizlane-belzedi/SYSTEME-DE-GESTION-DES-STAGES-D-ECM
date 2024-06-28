@@ -1,0 +1,70 @@
+{% extends 'layout/index.html' %}
+{% block content %}
+<div class="page-wrapper">
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-7 align-self-center">
+                <h2 class="page-title text-truncate text-dark font-weight-medium mb-1">Liste des tuteurs</h2>
+                <div class="d-flex align-items-center">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb m-0 p-0">
+                            <li class="breadcrumb-item">Accueil</li>
+                            <li class="breadcrumb-item text-muted active" aria-current="page">Tuteurs</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-5 align-self-center">
+                <div class="customize-input float-end">
+                    <a href="{% url 'create_tuteur' %}" class="btn btn-primary">Ajouter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="zero_config" class="table border table-striped table-bordered text-nowrap">
+                                <thead>
+                                    <th>Nom</th>
+                                    <th>Prénom</th>
+                                    <th>Qualité</th>
+                                    <th>Téléphone</th>
+                                    <th>Entreprise</th>
+                                    <th>Action</th>
+                                </thead>
+                                <tbody>
+                                    {% for tuteur in tuteurs %}
+                                    <tr>
+                                        <td>{{ tuteur.nom_t }}</td>
+                                        <td>{{ tuteur.prenom_t }}</td>
+                                        <td>{{ tuteur.qualite_t }}</td>
+                                        <td>{{ tuteur.tel_t }}</td>
+                                        <td>{{ tuteur.entreprise }}</td>
+                                        <td>
+                                            <a href="{% url 'view_tuteur' tuteur.pk %}" class="btn btn-sm btn-info">
+                                                <i data-feather="eye" class="feather-icon"></i>
+                                            </a>
+                                            <a href="{% url 'update_tuteur' tuteur.pk %}" class="btn btn-sm btn-success">
+                                                <i data-feather="edit" class="feather-icon"></i>
+                                            </a>
+                                            <a href="{% url 'delete_tuteur' tuteur.pk %}" class="btn btn-sm btn-danger"
+                                                onclick="return confirm('Confirmez-vous la suppression ?')">
+                                                <i data-feather="trash" class="feather-icon"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

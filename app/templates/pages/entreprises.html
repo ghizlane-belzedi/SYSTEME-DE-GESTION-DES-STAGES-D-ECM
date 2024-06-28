@@ -1,0 +1,77 @@
+{% extends 'layout/index.html' %}
+{% block content %}
+        <div class="page-wrapper">
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-7 align-self-center">
+                        <h2 class="page-title text-truncate text-dark font-weight-medium mb-1">Liste des entreprises</h2>
+                        <div class="d-flex align-items-center">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb m-0 p-0">
+                                    <li class="breadcrumb-item">Home</li>
+                                    <li class="breadcrumb-item text-muted active" aria-current="page">Entreprises</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-5 align-self-center">
+                        <div class="customize-input float-end">
+                            <a href="{% url 'create_entreprise' %}" class="btn btn-primary">Ajouter</a>      
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="zero_config" class="table border table-striped table-bordered text-nowrap">
+                         <thead>
+                    <th>Raison Sociale</th>
+                    <th>Forme Juridique</th>
+                    <th>Adresse</th>
+                    <th>Téléphone</th>
+                    <th>Code Postal</th>
+                    <th>Ville</th>
+                    <th>Fax</th>
+                    <th>Contact Nom</th>
+                    <th>Téléphone Contact</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                    {% for entreprise in entreprises %}
+                    <tr>
+                        <td>{{ entreprise.raison_sociale }}</td>
+                        <td>{{ entreprise.forme_juridique }}</td>
+                        <td>{{ entreprise.adresse_ent }}</td>
+                        <td>{{ entreprise.tel_ent }}</td>
+                        <td>{{ entreprise.c_postal }}</td>
+                        <td>{{ entreprise.ville }}</td>
+                        <td>{{ entreprise.fax }}</td>
+                        <td>{{ entreprise.contact_nom }}</td>
+                        <td>{{ entreprise.tel_contact }}</td>
+                        <td>
+                            <a href="{% url 'view_entreprise' entreprise.pk %}" class="btn btn-sm btn-info"><i data-feather="eye" class="feather-icon"></i></a>
+                            <a href="{% url 'update_entreprise' entreprise.pk %}" class="btn btn-sm btn-success"><i data-feather="edit" class="feather-icon"></i></a>
+                            <a href="{% url 'delete_entreprise' entreprise.pk %}" class="btn btn-sm btn-danger"
+                                onclick="return confirm('Confirmez-vous la suppression ?')"><i data-feather="trash" class="feather-icon"></i></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </table>
+    </div>
+    </div>
+   </div>
+   </div>
+   </div>
+
+</div>
+</div>
+
+{% endblock %}

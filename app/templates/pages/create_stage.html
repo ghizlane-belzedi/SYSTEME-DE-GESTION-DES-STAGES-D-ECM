@@ -1,0 +1,41 @@
+{% extends 'layout/index.html' %}
+{% block content %}
+{% load static %}
+
+<div class="page-wrapper">
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 align-self-center">
+                <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Affecter Stage</h3>
+                <div class="nk-block-des text-soft">
+                </div>
+            </div>
+        </div>
+    </div>                      
+    <div class="container-fluid">
+  <div class="row">
+                                                <div class="col-12">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                    <form method="post" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <div class="form-body">
+                                            <div class="row">
+                                        {{ form.as_p }}
+                            <div class="form-actions">
+                                <div class="text-end">
+                                    <button type="submit" class="btn btn-primary">Affecter</button>
+                                    <button type="reset" class="btn btn-dark">
+                                        <a href="{% url 'stages' %}" class="text-white">Annuler</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

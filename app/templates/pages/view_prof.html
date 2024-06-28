@@ -1,0 +1,57 @@
+{% extends 'layout/index.html' %}
+{% block content %}
+
+<div class="page-wrapper">
+
+<div class="card mt-3 ml-4">
+    <div class="card-header">
+        <h1>Informations du Professeur</h1>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <tr>
+                <th>Qualité :</th>
+                <td>{{ prof.qualite_prof }}</td>
+            </tr>
+            <tr>
+                <th>Nom :</th>
+                <td>{{ prof.nom_prof }}</td>
+            </tr>
+            <tr>
+                <th>Prénom :</th>
+                <td>{{ prof.prenom_prof }}</td>
+            </tr>
+            <tr>
+                <th>Adresse :</th>
+                <td>{{ prof.adresse_prof }}</td>
+            </tr>
+            <tr>
+                <th>Téléphone École :</th>
+                <td>{{ prof.tel_prof_eco }}</td>
+            </tr>
+            <tr>
+                <th>Code Postal :</th>
+                <td>{{ prof.c_postal }}</td>
+            </tr>
+            <tr>
+                <th>Ville :</th>
+                <td>{{ prof.ville }}</td>
+            </tr>
+            <tr>
+                <th>Téléphone Domicile :</th>
+                <td>{{ prof.tel_prof_dom }}</td>
+            </tr>
+            <tr>
+                <th>Date de Départ :</th>
+                <td>{{ prof.date_depart }}</td>
+            </tr>
+            <tr>
+                <th>Date d'Embauche :</th>
+                <td>{{ prof.date_embauche }}</td>
+            </tr>
+        </table>
+        <a href="{% url 'profs' %}"><i class="fa-solid fa-arrow-right-from-bracket">Retour</i></a>
+    </div>
+</div>
+</div>
+{% endblock %}

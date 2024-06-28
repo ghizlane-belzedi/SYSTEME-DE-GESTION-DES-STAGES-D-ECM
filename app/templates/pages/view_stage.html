@@ -1,0 +1,53 @@
+{% extends 'layout/index.html' %}
+{% block content %}
+
+<div class="page-wrapper">
+
+<div class="card mt-3 ml-4">
+    <div class="card-header">
+        <h1>Informations du Stage</h1>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <tr>
+                <th>Numéro du Stage :</th>
+                <td>{{ stage.n_stage }}</td>
+            </tr>
+            <tr>
+                <th>Promo :</th>
+                <td>{{ stage.promo }}</td>
+            </tr>
+            <tr>
+                <th>Étudiant Promo :</th>
+                <td>{{ stage.n_et_promo }}</td>
+            </tr>
+            <tr>
+                <th>Professeur :</th>
+                <td>{{ stage.prof }}</td>
+            </tr>
+            <tr>
+                <th>Tuteur :</th>
+                <td>{{ stage.tuteur }}</td>
+            </tr>
+            <tr>
+                <th>Entreprise :</th>
+                <td>{{ stage.entreprise }}</td>
+            </tr>
+            <tr>
+                <th>Type de Stage :</th>
+                <td>{{ stage.id_type_stage }}</td>
+            </tr>
+            <tr>
+                <th>Année du Stage :</th>
+                <td>{{ stage.annee_stage }}</td>
+            </tr>
+            <tr>
+                <th>Compte Rendu :</th>
+                <td>{{ stage.compte_rendu }}</td>
+            </tr>
+        </table>
+        <a href="{% url 'stages' %}"><i class="fa-solid fa-arrow-right-from-bracket">Retour</i></a>
+    </div>
+</div>
+</div>
+{% endblock %}

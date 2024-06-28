@@ -1,0 +1,37 @@
+{% extends 'layout/index.html' %}
+{% block content %}
+
+<div class="page-wrapper">
+
+<div class="card mt-3 ml-4">
+    <div class="card-header">
+        <h1>Informations du Tuteur</h1>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <tr>
+                <th>Qualité :</th>
+                <td>{{ tuteur.qualite_t }}</td>
+            </tr>
+            <tr>
+                <th>Nom :</th>
+                <td>{{ tuteur.nom_t }}</td>
+            </tr>
+            <tr>
+                <th>Prénom :</th>
+                <td>{{ tuteur.prenom_t }}</td>
+            </tr>
+            <tr>
+                <th>Téléphone :</th>
+                <td>{{ tuteur.tel_t }}</td>
+            </tr>
+            <tr>
+                <th>Entreprise :</th>
+                <td>{{ tuteur.entreprise }}</td>
+            </tr>
+        </table>
+        <a href="{% url 'tuteurs' %}"><i class="fa-solid fa-arrow-right-from-bracket">Retour</i></a>
+    </div>
+</div>
+</div>
+{% endblock %}
